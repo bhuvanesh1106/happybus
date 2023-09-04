@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paybill Page</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .paybill-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .paybill-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="paybill-container">
+        <div class="paybill-box">
+            <h1>Paybill</h1>
+            <p>Number of Seats Selected: {{ seat_count }}</p>
+            <p>Total Amount: {{ total_amount }}</p>
+            <button id="ok-button">OK</button>
+        </div>
+    </div>
+</body>
+</html>

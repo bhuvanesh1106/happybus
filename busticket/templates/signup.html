@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signin Page</title>
+    <style>
+        /* Custom styles for the signin page */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://wallpaperaccess.com/full/1089773.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            padding: 15px 0;
+            background-color: #ffbb00;
+            margin: 0;
+        }
+        h2{
+            text-align: center;
+            color: #fff;
+            padding: 0px 0;
+            margin: 0;
+            background-color: #ffbb00;
+        }
+
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="tel"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #0e0d0d;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form input[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            background-color: #ffbb00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>HAPPY BUS.COM</h1>
+    <h2>SIGNUP</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+
+        <input type="submit" value="Signin">
+    </form>
+
+    
+        <!-- Add more rows for additional users or dynamically populate the table using Django -->
+    </table>
+</body>
+</html>

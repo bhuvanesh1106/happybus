@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://img.freepik.com/free-vector/bank-card-coin-withdrawal-money-money-payment-symbol-vector-illustration_587448-912.jpg?w=2000");
+            
+            font-family: Arial, sans-serif;
+        }
+
+        .payment-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .payment-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cardNumberInput = document.getElementById("card_number");
+            const cvvInput = document.getElementById("cvv");
+            
+            cardNumberInput.addEventListener("input", function() {
+                const maxLength = 12;
+                if (cardNumberInput.value.length > maxLength) {
+                    cardNumberInput.setCustomValidity("Card number should be 12 digits");
+                } else {
+                    cardNumberInput.setCustomValidity("");
+                }
+            });
+
+            cvvInput.addEventListener("input", function() {
+                const maxLength = 3;
+                if (cvvInput.value.length > maxLength) {
+                    cvvInput.setCustomValidity("CVV should be 3 digits");
+                } else {
+                    cvvInput.setCustomValidity("");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-box">
+            <h1>Make Payment</h1>
+            <form method="post" action="{% url 'payment_confirmation' %}">
+                {% csrf_token %}
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" required>
+                
+                <label for="expiration">Expiration Date:</label>
+                <input type="text" id="expiration" name="expiration" placeholder="MM/YY" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="number" id="cvv" name="cvv" required>
+                
+                <label for="name">Cardholder's Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

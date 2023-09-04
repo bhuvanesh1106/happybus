@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offer Page</title>
+    <style>
+        /* Custom styles for the offer page */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://thumbs.dreamstime.com/b/speacial-offer-off-illustration-use-landing-page-website-poster-banner-flyer-background-label-wallpaper-sale-speacial-offer-194271973.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #ffbb00;
+            margin: 0;
+        }
+        h2{
+            text-align: center;
+            color: #fff;
+            padding: 10px 0;
+            margin: 0;
+            background-color: #ffbb00;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #111111;
+            background-color: rgba(252, 250, 250, 0.993);
+            color: #111111;
+        }
+
+        button {
+            background-color: #240101;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Center the form horizontally */
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        // JavaScript to redirect to the Booking Page after applying the coupon code
+        function applyCoupon() {
+            var couponCode = document.getElementById('coupon-code-input').value;
+            // Add your logic here to apply the coupon code
+            // ...
+
+            // Redirect to the booking page
+            window.location.href = '/booking/';
+        }
+    </script>
+</head>
+<body>
+    <h1>HAPPYBUS.COM</h1>
+    <h2>GET MORE OFFERS</h2>
+    <div class="center">
+        <form>
+            <p>Enter your coupon code below:</p>
+            <input type="text" id="coupon-code-input" placeholder="Enter coupon code">
+            <br>
+            <button type="button" onclick="applyCoupon()">Apply Coupon</button>
+        </form>
+    </div>
+</body>
+</html>

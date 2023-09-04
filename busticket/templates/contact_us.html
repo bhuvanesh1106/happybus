@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <style>
+        /* Custom styles for the Contact Us page */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://img.freepik.com/premium-vector/customer-support-service-chat-vector-icons-call-center-symbols-headset-symbols-hotline_662353-566.jpg?w=2000"); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            padding: 20px 0;
+            background-color: #ffbb00;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .customer-service {
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            background-color: #ffbb00;
+            padding: 10px 0;
+            margin-top: 600px;
+        }
+
+        /* Language selection styles */
+        .language-selection {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Bus Help</h1>
+    <div class="container">
+        <!-- Write your contact us content here -->
+        <p>Have a query related to your bookings or on your previous concerns?
+            <a href="{% url 'login' %}">Login to your account</a>
+        </p>
+    </div>
+
+    <div class="customer-service">
+        24/7 Customer Service: 9789389067
+    </div>
+
+    <div class="language-selection">
+        <label for="language">Select Language:</label>
+        <select id="language" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <!-- Add more language options as needed -->
+        </select>
+    </div>
+
+    <script>
+        // JavaScript function to handle language selection
+        function changeLanguage() {
+            var selectedLanguage = document.getElementById('language').value;
+            // You can use the selectedLanguage value to handle language-specific content or save it in a cookie/session.
+            // For example, you can redirect the user to the translated version of the page.
+            // You may need to create translated versions of this page for different languages.
+            // Example: window.location.href = '/contact_us/' + selectedLanguage + '/';
+        }
+    </script>
+</body>
+</html>

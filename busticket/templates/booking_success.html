@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Your Ticket</title>
+    <style>
+        body {
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230816/pngtree-the-lake-ross-sunset-in-mountain-ridge-image_13068936.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 70%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e2a114;
+        }
+
+        td {
+            background-color: #d6a318;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #219354;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirm Your Ticket</h1>
+    <table>
+        <tr>
+            <th>Source</th>
+            <td>{{ source }}</td>
+        </tr>
+        <tr>
+            <th>Destination</th>
+            <td>{{ destination }}</td>
+        </tr>
+        <tr>
+            <th>Seats</th>
+            <td>{{ seats }}</td>
+        </tr>
+    </table>
+
+    <form method="post" action="{% url 'bus_seat' %}">
+        {% csrf_token %}
+        <input type="hidden" id="selected-seats" name="selected_seats" value="{{ selected_seats }}">
+        <input type="hidden" id="source" name="source" value="{{ source }}">
+        <input type="hidden" id="destination" name="destination" value="{{ destination }}">
+        <input type="hidden" id="seats" name="seats" value="{{ seats }}">
+        <button type="submit">Go to Seat Selection</button>
+    </form>
+</body>
+</html>
